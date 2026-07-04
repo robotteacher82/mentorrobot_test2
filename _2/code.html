@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>멘토로봇코딩교육원 - 대구 달서구 로봇·코딩 전문 교육</title>
+<meta content="미래를 만드는 로봇코딩 교육, 대구 달서구 진천동 로봇·코딩 전문 교육원. 15년 이상의 대회 경험과 체계적인 커리큘럼." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary": "#004ac6",
+                "error-container": "#ffdad6",
+                "on-surface-variant": "#434655",
+                "surface-variant": "#e0e3e5",
+                "primary-fixed-dim": "#b4c5ff",
+                "outline-variant": "#c3c6d7",
+                "tertiary-fixed": "#dae2fd",
+                "inverse-on-surface": "#eff1f3",
+                "tertiary": "#4d556b",
+                "secondary-container": "#fea619",
+                "on-tertiary": "#ffffff",
+                "on-background": "#191c1e",
+                "on-tertiary-fixed": "#131b2e",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#dbe1ff",
+                "surface": "#f7f9fb",
+                "inverse-surface": "#2d3133",
+                "inverse-primary": "#b4c5ff",
+                "secondary-fixed-dim": "#ffb95f",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#bec6e0",
+                "tertiary-container": "#656d84",
+                "on-secondary-fixed": "#2a1700",
+                "error": "#ba1a1a",
+                "surface-tint": "#0053db",
+                "on-primary-fixed-variant": "#003ea8",
+                "primary-container": "#2563eb",
+                "on-primary-container": "#eeefff",
+                "on-secondary-fixed-variant": "#653e00",
+                "surface-container-low": "#f2f4f6",
+                "surface-bright": "#f7f9fb",
+                "on-secondary": "#ffffff",
+                "outline": "#737686",
+                "background": "#f7f9fb",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#00174b",
+                "secondary-fixed": "#ffddb8",
+                "surface-dim": "#d8dadc",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e0e3e5",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "surface-container-high": "#e6e8ea",
+                "surface-container": "#eceef0",
+                "secondary": "#855300",
+                "on-surface": "#191c1e",
+                "on-tertiary-container": "#eef0ff",
+                "on-secondary-container": "#684000"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xl": "4rem",
+                "container-max": "1280px",
+                "sm": "1rem",
+                "xs": "0.5rem",
+                "base": "4px",
+                "lg": "2.5rem",
+                "gutter": "24px",
+                "md": "1.5rem"
+            },
+            "fontFamily": {
+                "headline-md": ["Noto Sans KR"],
+                "label-md": ["Noto Sans KR"],
+                "body-lg": ["Noto Sans KR"],
+                "headline-lg": ["Noto Sans KR"],
+                "display-lg": ["Noto Sans KR"],
+                "display-lg-mobile": ["Noto Sans KR"],
+                "body-md": ["Noto Sans KR"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .ambient-shadow { box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08); }
+        .ambient-shadow:hover { box-shadow: 0 10px 32px rgba(15, 23, 42, 0.12); transform: translateY(-2px); transition: all 0.3s ease; }
+        .grid-pattern { background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Promo Bar -->
+<div class="bg-secondary text-on-secondary py-2 px-4 text-center font-label-md text-sm sticky top-0 z-[60]">
+<div class="max-w-container-max mx-auto flex justify-center items-center gap-2">
+<span>🎉 2026 겨울방학 특강 모집 중 — 선착순 상담 예약 시 체험 수업 안내</span>
+<a class="underline font-bold hover:opacity-80 transition-opacity" href="#reservation">예약하기 →</a>
+</div>
+</div>
+<!-- TopNavBar -->
+<header class="fixed top-10 left-0 w-full z-50 glass-nav border-b border-outline-variant/30 bg-surface/80 h-20 shadow-sm">
+<nav class="max-w-container-max mx-auto h-full px-6 md:px-12 flex justify-between items-center">
+<div class="flex items-center gap-2 font-headline-md text-headline-md font-bold text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="robot">robot</span>
+<span class="tracking-tight">멘토로봇코딩교육원</span>
+</div>
+<div class="hidden md:flex items-center gap-6 font-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#about">소개</a>
+<a class="hover:text-primary transition-colors" href="#features">특장점</a>
+<a class="hover:text-primary transition-colors" href="#programs">교육과정</a>
+<a class="hover:text-primary transition-colors" href="#portfolio">생기부·포트폴리오</a>
+<a class="hover:text-primary transition-colors" href="#awards">수상실적</a>
+<a class="hover:text-primary transition-colors" href="#faq">FAQ</a>
+<a class="hover:text-primary transition-colors" href="#location">오시는 길</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 transition-all scale-100 active:scale-95" href="#reservation">상담예약</a>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden grid-pattern">
+<div class="max-w-container-max mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center py-xl">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary-container/10 text-primary font-label-md mb-6">
+<span class="material-symbols-outlined text-sm" data-icon="school">school</span>
+                        대구 달서구 진천동 대표 교육원
+                    </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight">
+                        미래를 만드는<br/><span class="text-primary">로봇코딩 교육</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        대구 달서구 로봇·코딩 전문 교육원. 체계적인 커리큘럼과 15년 이상의 풍부한 대회 지도 경험으로 우리 아이들의 잠재력을 깨웁니다.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:shadow-lg transition-all" href="tel:010-8253-5879">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                            무료 상담 010-8253-5879
+                        </a>
+<a class="border-2 border-primary text-primary px-8 py-4 rounded-full font-bold hover:bg-primary/5 transition-all" href="#reservation">
+                            상담 예약하기
+                        </a>
+</div>
+<div class="mt-12 grid grid-cols-3 gap-6 pt-12 border-t border-outline-variant/30">
+<div>
+<p class="text-primary font-bold text-2xl">15+년</p>
+<p class="text-on-surface-variant text-sm">지도 및 수상 경력</p>
+</div>
+<div>
+<p class="text-primary font-bold text-2xl">대구 1위</p>
+<p class="text-on-surface-variant text-sm">경진대회 수상 석권</p>
+</div>
+<div>
+<p class="text-primary font-bold text-2xl">초·중·고</p>
+<p class="text-on-surface-variant text-sm">맞춤 연계 과정</p>
+</div>
+</div>
+</div>
+<div class="relative flex justify-center items-center">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-75 animate-pulse"></div>
+<img class="relative z-10 w-full max-w-md drop-shadow-2xl" data-alt="A futuristic and friendly high-tech educational robot character designed for children, holding a glowing digital tablet in a clean, brightly lit professional STEM classroom environment with soft primary blue and amber accents. The scene is professional, modern, and inspiring, highlighting academic excellence and robotic engineering. High-key lighting, Pixar-style clean 3D render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn3f8BQXYWQ2QuslopgxYn-qgmwhBUrPhWOOd1RuVfLLPUy2q3trwKFb_jQ9X8KhRHbQor_fKf29GCBOLkT54BNlavqgd-cT0r54R3r9UmTxcDA0onT53KKSCeBbUM3mGnuJ-4TEAs1OMpunHTJk8C9nvoAE54pE9lonjR7ExDTMHZ1YnTeoawuYm3oc_BoLW7vWPug01bHpocZvzX-eSKXRbWY76-YxhHmzVa7-Ukp0J2BPz5GSla"/>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-surface-container-low py-12 border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-6 md:px-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</div>
+<p class="font-label-md text-on-surface-variant">대구학생로봇경진대회 다수 수상</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+</div>
+<p class="font-label-md text-on-surface-variant">생활기록부·포트폴리오 연계</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</div>
+<p class="font-label-md text-on-surface-variant">프리미엄 로봇 전문 교구 사용</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+</div>
+<p class="font-label-md text-on-surface-variant">1:1 맞춤 성장 멘토링</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-xl bg-surface" id="about">
+<div class="max-w-container-max mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="aspect-square bg-surface-container-high rounded-3xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional classroom environment at a coding academy in Daegu, Jincheon-dong. Modern workstations with robotic kits, circuit boards, and bright monitors showing programming code. The atmosphere is academic, organized, and high-tech, focusing on focused student learning and collaboration. Soft, natural light filling the room with professional photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJx24W9ZYPnvCl8DtBhSJg0rGLT9wOC1XoVG5Of9sY63IWp0pRt8ABe-1vcnokuFLZ5tqt-I32waDavPGPcULJcL9iC8763ug4kKMZhOevPtdUHwOY-U1MWUU9H909aimYq8YohSqF1jSvbFvbrWMvaRQtHtfqXTa2ntl4J4jL7UTRUUv7v8wDhxS7AJg-Q0TEIs5rYa_hwHvM5NaaUcoPXffYjX7remnR1woQ-EDuoMnEkqTEHKmS')"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-outline-variant/30">
+<p class="font-bold text-primary text-xl">Since 2010</p>
+<p class="text-sm text-on-surface-variant">진천동 로봇 교육의 역사</p>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-headline-lg text-headline-lg mb-6 leading-tight">
+                        로봇을 만들며,<br/><span class="text-primary">코딩으로 생각하는 힘</span>을 기릅니다
+                    </h2>
+<p class="font-body-md text-on-surface-variant mb-8">
+                        멘토로봇코딩교육원은 단순히 도구를 다루는 법을 가르치지 않습니다. 문제를 정의하고, 해결을 위한 논리적 구조를 설계하며, 로봇을 통해 결과를 직접 확인하는 실천적 과정을 교육합니다.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md">대구 달서구 진천로 75-24 진천역 인근 위치</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md">개별 수준별 소수 정예 밀착 교육 시스템</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md">국제 로봇 대회 및 전국대회 상시 대비반</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md">대입/특목고 진학을 위한 포트폴리오 상시 관리</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Programs Section (Bento Grid Style) -->
+<section class="py-xl bg-surface-container-low" id="programs">
+<div class="max-w-container-max mx-auto px-6 md:px-12">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">교육 과정 안내</h2>
+<p class="text-on-surface-variant">아이의 연령과 목표에 최적화된 맞춤형 커리큘럼</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Program Card 1 -->
+<div class="ambient-shadow bg-white p-8 rounded-3xl flex flex-col h-full border border-outline-variant/20">
+<span class="text-sm font-bold text-primary mb-4">Level 01</span>
+<h3 class="font-headline-md text-headline-md mb-4">초등 창의 로봇</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">기초 기계 원리와 블록 코딩을 통해 논리적 사고의 기초를 다지는 즐거운 로봇 입문 과정</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">초등 전학년</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Program Card 2 (Featured) -->
+<div class="ambient-shadow bg-primary text-on-primary p-8 rounded-3xl flex flex-col h-full border border-primary relative overflow-hidden md:scale-105 z-10">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase">Featured</span>
+</div>
+<span class="text-sm font-bold text-primary-fixed-dim mb-4">Level 02</span>
+<h3 class="font-headline-md text-headline-md mb-4">중등 스팀컵 프리미엄</h3>
+<p class="text-primary-fixed-dim mb-8 flex-grow">본격적인 로봇 제어와 C언어/파이썬 연계 교육. 각종 경진대회 및 학교 동아리 활동 최적화 과정</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold">초6~중등 전학년</span>
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<!-- Program Card 3 -->
+<div class="ambient-shadow bg-white p-8 rounded-3xl flex flex-col h-full border border-outline-variant/20">
+<span class="text-sm font-bold text-primary mb-4">Level 03</span>
+<h3 class="font-headline-md text-headline-md mb-4">중·고등 심화 코딩</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">알고리즘 분석, 데이터 구조 및 전문 임베디드 시스템 설계. 고입/대입 생기부 포트폴리오 집중 관리</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">중·고등부</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-surface-variant/30 rounded-3xl p-8 flex flex-col md:flex-row items-center gap-6 justify-between border border-outline-variant/20">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="star">star</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">방학 특별 집중 캠프</h4>
+<p class="text-sm text-on-surface-variant">단기간 실력 향상을 위한 몰입형 교육 프로그램 (여름/겨울방학)</p>
+</div>
+</div>
+<button class="bg-white text-on-surface px-6 py-3 rounded-full font-bold shadow-sm hover:shadow-md transition-all">커리큘럼 상세보기</button>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-xl" id="portfolio">
+<div class="max-w-container-max mx-auto px-6 md:px-12">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">생기부 &amp; 진학 포트폴리오</h2>
+<p class="font-body-md text-on-surface-variant mb-10">
+                            단순한 수상 실적을 넘어, 학생의 고민과 해결 과정을 전문적인 STAR(Situation, Task, Action, Result) 기법으로 기록합니다. 학교 생활기록부에 기재 가능한 정량적/정성적 성과를 체계적으로 관리합니다.
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="edit_note">edit_note</span>
+<div>
+<h4 class="font-bold mb-1 group-hover:text-primary transition-colors">탐구 과정 문서화</h4>
+<p class="text-sm text-on-surface-variant">모든 로봇 제작 과정을 일지로 기록하여 고유한 연구 노트를 구축합니다.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="groups">groups</span>
+<div>
+<h4 class="font-bold mb-1 group-hover:text-primary transition-colors">교내 동아리 컨설팅</h4>
+<p class="text-sm text-on-surface-variant">학교 로봇/SW 동아리 활동 계획 및 프로젝트 주제 선정을 지원합니다.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-primary/5 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="article">article</span>
+<div>
+<h4 class="font-bold mb-1 group-hover:text-primary transition-colors">대학 진학 자기소개서 연계</h4>
+<p class="text-sm text-on-surface-variant">코딩/로봇 경험을 고등/대학 입시 소스(Source)로 활용하도록 돕습니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative bg-surface-container-highest rounded-3xl overflow-hidden shadow-xl aspect-[4/5]">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, professional presentation layout of a student's robotics portfolio. It includes high-quality photos of complex robots, printed code snippets in Python, flowcharts, and certificates of achievement. The lighting is studio-bright with a minimalist, clean aesthetic, emphasizing academic organization and high-tech achievement. Top-down flat lay photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4suPwuyqtdvGSs37yQ5U8kaQp9v-BClc7tVsW1phLBJhg-NLJ6IKrzJuQ-FE-FHOk9mhZoJ-2N3-z7WN4-rB69jB7pJGIfnB2fBEEXOUCSLChnMeW81Agfafgb3E42rWQYecf31Lk_mi7RILNeAdnDY-kN_-OW52f2wUyRY0g6FhOz7mrlg66XIjN5rfs4iKJR4uAVTXr9Nnq5OuIy1XWT8NsfK0oIEM2sYiE9hnd5AshRH8koVex')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Awards Section -->
+<section class="py-xl bg-primary text-on-primary" id="awards"><div class="max-w-container-max mx-auto px-6 md:px-12">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">수상 실적 (Awards)</h2>
+<p class="text-primary-fixed opacity-90">멘토로봇의 교육 경쟁력은 압도적인 수상 실적으로 증명됩니다.</p>
+</div>
+<!-- 2025 대구학생로봇경진대회 Section -->
+<div class="mb-20">
+<div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 border-b border-white/20 pb-4">
+<h3 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">military_tech</span>
+        2025 대구학생로봇경진대회 석권
+      </h3>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-bold text-sm">밀어내기 종목 전 부문 수상</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Low Grade -->
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10">
+<h4 class="font-bold mb-4 text-secondary-fixed">저학년부</h4>
+<div class="grid grid-cols-3 gap-4">
+<div class="text-center">
+<p class="text-xs opacity-70">1위</p>
+<p class="font-bold text-xl">금상</p>
+</div>
+<div class="text-center">
+<p class="text-xs opacity-70">2위</p>
+<p class="font-bold text-xl">은상</p>
+</div>
+<div class="text-center">
+<p class="text-xs opacity-70">3위</p>
+<p class="font-bold text-xl">동상</p>
+</div>
+</div>
+</div>
+<!-- High Grade -->
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10">
+<h4 class="font-bold mb-4 text-secondary-fixed">고학년부</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center">
+<p class="text-xs opacity-70">1위</p>
+<p class="font-bold text-xl">금상</p>
+</div>
+<div class="text-center">
+<p class="text-xs opacity-70">3위</p>
+<p class="font-bold text-xl">동상</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Major Institutional Awards Section -->
+<div>
+<div class="flex items-center gap-2 mb-8 border-b border-white/20 pb-4">
+<h3 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">workspace_premium</span>
+        주요 상훈 (Major Institutional Awards)
+      </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Ministry Level -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed">account_balance</span>
+<h4 class="font-bold">장관상 (Ministry)</h4>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex justify-between"><span>과학기술정보통신부</span> <span class="font-bold">2회</span></li>
+<li class="flex justify-between"><span>산업통상자원부</span> <span class="font-bold">2회</span></li>
+</ul>
+</div>
+<!-- Local Government -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed">location_city</span>
+<h4 class="font-bold">시장상 (Local Gov)</h4>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex justify-between"><span>대구광역시장상</span> <span class="font-bold">3회</span></li>
+</ul>
+</div>
+<!-- Agency Level -->
+<div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed">groups</span>
+<h4 class="font-bold">원장/협회장상</h4>
+</div>
+<ul class="space-y-2 text-sm">
+<li class="flex justify-between"><span>한국로봇산업진흥원</span> <span class="font-bold">8회</span></li>
+<li class="flex justify-between"><span>STEAM교육협회</span> <span class="font-bold">9회</span></li>
+<li class="flex justify-between"><span>대경로봇기업진흥협회</span> <span class="font-bold">4회</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 text-center">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-bold shadow-lg">
+        통산 500회 이상 수상 기록 보유
+      </div>
+</div>
+</div>
+</div></section>
+<!-- FAQ Section -->
+<section class="py-xl" id="faq">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-center">자주 묻는 질문</h2>
+<div class="space-y-4">
+<details class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-surface transition-colors list-none">
+<span>초보자도 바로 시작할 수 있나요?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-sm border-t border-outline-variant/10">
+                            네, 가능합니다. 멘토로봇의 커리큘럼은 로봇을 처음 접하는 아이들을 위한 입문 단계부터 준비되어 있습니다. 수준별 진단 테스트를 통해 아이의 현재 이해도에 맞는 최적의 반을 배정합니다.
+                        </div>
+</details>
+<details class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-surface transition-colors list-none">
+<span>대회 준비는 어떻게 진행되나요?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-sm border-t border-outline-variant/10">
+                            연중 진행되는 주요 대회 일정에 맞춰 대회 특강반이 운영됩니다. 평소 정규 수업에서 쌓은 기본기를 바탕으로 대회의 미션을 해결하는 심화 전략 및 로봇 튜닝 과정을 거치게 됩니다.
+                        </div>
+</details>
+<details class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-surface transition-colors list-none">
+<span>생활기록부 관리는 어떤 방식으로 해주나요?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-sm border-t border-outline-variant/10">
+                            단순 출석 확인이 아닌, 매 수업의 프로젝트 산출물을 아카이빙합니다. 학생이 주도적으로 문제를 해결한 과정을 리포트로 작성하여, 담임 선생님께 제출하거나 면접/포트폴리오 구성 시 핵심 근거 자료로 활용하도록 지도합니다.
+                        </div>
+</details>
+<details class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-surface transition-colors list-none">
+<span>교육 시간은 어떻게 되나요?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant text-sm border-t border-outline-variant/10">
+                            평일 오후 2시부터 8시까지, 토요일 오전 10시부터 오후 4시까지 운영됩니다. 개별 시간표 조정이 가능하므로 상담 시 희망하시는 요일과 시간을 말씀해 주시면 됩니다.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-xl bg-surface-container-low overflow-hidden" id="location">
+<div class="max-w-container-max mx-auto px-6 md:px-12 grid md:grid-cols-5 gap-12">
+<div class="md:col-span-2 space-y-8">
+<h2 class="font-headline-lg text-headline-lg">오시는 길</h2>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<div>
+<h4 class="font-bold">주소</h4>
+<p class="text-on-surface-variant text-sm mt-1">대구광역시 달서구 진천로 75-24 3층<br/>(진천역 인근, 계룡리슈빌 상가 건너편)</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+<div>
+<h4 class="font-bold">대표 번호</h4>
+<p class="text-on-surface-variant text-sm mt-1">010-8253-5879</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<div>
+<h4 class="font-bold">운영 시간</h4>
+<p class="text-on-surface-variant text-sm mt-1">평일 14:00 - 20:00<br/>토요일 10:00 - 16:00 (일요일 휴무)</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-lg" data-alt="A modern map icon or stylized illustration for navigation and location services in a clean corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnOH5LwgKOHPlmzHp-GWPvoMz8gDGU8pmVnNpvi_fXSKkvnBmMn25Y67h6TIVrDlKOlkbCU6Do2XwyZ4xMU_bRLfPf3-BDcHFi_lMsJ-0HlR2jh2YIZmiVWRVVDX-IydEVr_io004Lj-vMJSopfBIPgRUFoaE_-45FgwgachxJ4hWPmZygR_v1P7gW-I-eV1PE438rUYKEDp6HzM2oP1bfHwEW4jCasWMvdmu9CXni5gk52Hxgabm9"/>
+<p class="font-bold text-sm">카카오맵/네이버맵<br/><span class="text-xs font-normal text-on-surface-variant">'멘토로봇코딩교육원' 검색</span></p>
+</div>
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+<div class="md:col-span-3">
+<div class="bg-surface-dim rounded-3xl h-[450px] w-full overflow-hidden shadow-inner relative group">
+<!-- Map Placeholder Injected with Location -->
+<div class="w-full h-full" data-location="대구광역시 달서구 진천로 75-24" style="">
+<div class="w-full h-full bg-cover bg-center grayscale-50 group-hover:grayscale-0 transition-all duration-700" data-alt="A clean, professional map visualization of the Jincheon-dong area in Daegu, showing local landmarks and the precise location of the education center with a friendly robot-themed pin. The aesthetic is modern, high-contrast, and easy to read, with soft blue and gray tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc7rSIbVLIykE7dJvQb480HOQQBXLA_Ft5KKAwWzi5XdUJ2am2yNkGfQ02M-S-TrfOKjAyc-UcpBtb2jQ-OlbZ6IJ6ETB6NXAwExXng1iSnxemYIEbqa2Jcv3Wkz9PnYvINUKml8Hp86xw8hJn21n5nPunanPdWDeMwVvuPkPs0-eIoS-PuWyAMAf8n8wWS7As6apOb6BsQN6ZThzpO2qa-_b8A6HYbo-ZScCZvssRiozsUJc9hUly')"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary text-on-primary px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transform -translate-y-4">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-bold">교육원 도착!</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation Section -->
+<section class="py-xl relative" id="reservation">
+<div class="max-w-4xl mx-auto px-6">
+<div class="bg-white rounded-[40px] shadow-2xl p-8 md:p-16 border border-outline-variant/30">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">상담 예약하기</h2>
+<p class="text-on-surface-variant">예약을 남겨주시면 원장이 직접 확인 후 연락드립니다.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault(); alert('상담 예약이 신청되었습니다. 곧 연락드리겠습니다!');">
+<div class="space-y-2">
+<label class="font-label-md text-sm text-on-surface-variant ml-1">학부모 성함</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface outline-none transition-all" placeholder="성함을 입력해 주세요" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-sm text-on-surface-variant ml-1">연락처</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface outline-none transition-all" placeholder="010-0000-0000" required="" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-sm text-on-surface-variant ml-1">자녀 학년</label>
+<select class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface outline-none transition-all">
+<option>학년 선택</option>
+<option>초등 저학년 (1~3)</option>
+<option>초등 고학년 (4~6)</option>
+<option>중학생</option>
+<option>고등학생</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-sm text-on-surface-variant ml-1">상담 희망 일시</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface outline-none transition-all" type="datetime-local"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-sm text-on-surface-variant ml-1">궁금하신 점 (선택)</label>
+<textarea class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface outline-none transition-all" placeholder="문의 사항을 자유롭게 적어주세요" rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex items-center gap-3 py-2">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" id="privacy" required="" type="checkbox"/>
+<label class="text-xs text-on-surface-variant" for="privacy">개인정보 수집 및 상담 목적 이용에 동의합니다. (필수)</label>
+</div>
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-primary text-on-primary py-5 rounded-xl font-bold text-lg hover:bg-primary/90 transition-all shadow-lg active:scale-[0.98]" type="submit">
+                                무료 상담 예약 신청하기
+                            </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant/30 py-xl px-6 md:px-12">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<div class="flex items-center gap-2 font-headline-md text-headline-md font-bold text-on-surface mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="robot">robot</span>
+                    멘토로봇코딩교육원
+                </div>
+<p class="text-on-surface-variant text-sm mb-8 max-w-md">
+                    미래 산업의 주역이 될 아이들의 꿈을 응원합니다. 15년 이상의 노하우로 단순한 지식 전달을 넘어 실전 역량을 키우는 교육을 실천합니다.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-on-surface shadow-sm hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-on-surface shadow-sm hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="blog">block</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">바로가기</h4>
+<ul class="space-y-4 text-on-surface-variant text-sm">
+<li><a class="hover:text-primary transition-colors" href="#about">교육원 소개</a></li>
+<li><a class="hover:text-primary transition-colors" href="#programs">커리큘럼 안내</a></li>
+<li><a class="hover:text-primary transition-colors" href="#awards">수상 실적</a></li>
+<li><a class="hover:text-primary transition-colors" href="#location">오시는 길</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">고객 지원</h4>
+<ul class="space-y-4 text-on-surface-variant text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">개인정보 처리방침</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">이용약관</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">강사 채용 안내</a></li>
+<li><a class="hover:text-primary transition-colors" href="#faq">자주 묻는 질문</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+<p>© 2024 Mentor Robot Coding Education Center. All rights reserved.</p>
+<div class="flex gap-6">
+<span>사업자등록번호: 123-45-67890</span>
+<span>대표: 김멘토</span>
+</div>
+</div>
+</footer>
+<!-- FAB for Quick Contact -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 transition-transform active:scale-90" href="tel:010-8253-5879">
+<span class="material-symbols-outlined text-3xl" data-icon="phone_in_talk">phone_in_talk</span>
+</a>
+<script>
+        // Simple micro-interaction for smooth reveal on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>
