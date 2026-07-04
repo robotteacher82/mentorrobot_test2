@@ -66,7 +66,7 @@
       })
       .catch(function (error) {
         if (error.message.indexOf('Failed to fetch') !== -1) {
-          setStatus('서버에 연결할 수 없습니다. python server.py 로 서버를 실행해 주세요.', 'error');
+          setStatus('온라인 예약 접수가 일시적으로 불가합니다. 전화(010-8253-5879)로 상담 예약을 부탁드립니다.', 'error');
         } else {
           setStatus(error.message, 'error');
         }
